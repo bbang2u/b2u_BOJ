@@ -30,7 +30,7 @@ vector<string> solution(vector<string> expressions) {
     vector<string> yeon;
 
     int max_digit_in_all = 0;
-
+    // 문자열 분리
     for (int i = 0; i < expressions.size(); i++) {
         stringstream ss(expressions[i]);
         string segment;
@@ -49,7 +49,7 @@ vector<string> solution(vector<string> expressions) {
             max_digit_in_all = max(max_digit_in_all, getMaxDigit(tokens[4]));
         }
     }
-
+    // 가능한 진법 추리기
     int jin;
     map<int, int> result;
     vector<int> possiblejin;
@@ -87,6 +87,7 @@ vector<string> solution(vector<string> expressions) {
         if (ans) { possiblejin.push_back(jin); }
     }
 
+    // 정답 찾기
     for (int i : Xloc) {
         string ans = front[i] + " " + yeon[i] + " " + back[i] + " = ";
         string curz = "";
